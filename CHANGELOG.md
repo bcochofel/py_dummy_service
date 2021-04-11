@@ -6,6 +6,7 @@
 <a name="0.5.0"></a>
 ## [0.5.0] - 2021-04-11
 ### Feat
+- docker alpine
 - kubernetes manifests
 
 
