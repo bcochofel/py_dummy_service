@@ -5,6 +5,9 @@
 
 <a name="0.7.0"></a>
 ## [0.7.0] - 2021-04-11
+### Docs
+- update
+
 ### Feat
 - open tracing
 
