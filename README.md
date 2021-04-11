@@ -24,6 +24,13 @@ valid values for env:
 * testing
 * production (default)
 
+you can check available routes using:
+
+```bash
+export FLASK_APP=py_dummy_service
+flask routes
+```
+
 ## Run tests and code coverage
 
 ```bash
