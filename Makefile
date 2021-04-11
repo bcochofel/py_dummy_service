@@ -1,5 +1,12 @@
 app_name = py-dummy-service
 
+test:
+	# pytest
+	coverage run -m pytest
+
+report:
+	coverage report
+
 build:
 	@docker build -t $(app_name) .
 
