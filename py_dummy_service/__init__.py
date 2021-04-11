@@ -49,6 +49,8 @@ def create_app(config_name=None):
     # logging config
     setup_logging(app)
 
+    logging.info("Starting Dummy Service")
+
     # blueprints config
     register_blueprints(app)
 
