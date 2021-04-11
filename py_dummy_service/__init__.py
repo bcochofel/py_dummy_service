@@ -1,14 +1,16 @@
 # __init__.py
 
 # base imports
-import os
 import logging
 from logging.config import dictConfig
+from os import getenv
 
 # third party imports
 from flask import Flask, jsonify
 from prometheus_flask_exporter import PrometheusMetrics
 from flask_healthz import healthz
+from jaeger_client import Config
+from flask_opentracing import FlaskTracing
 
 
 # local imports
@@ -16,7 +18,9 @@ from config import config
 
 
 __app_name__ = "py-dummy-service"
-__app_version__ = "0.6.0"
+__app_version__ = "0.7.0"
+
+JAEGER_HOST = getenv("JAEGER_HOST", None)
 
 metrics = PrometheusMetrics.for_app_factory()
 metrics.info("app_info", "Dummy Service", version=__app_version__)
@@ -33,7 +37,7 @@ def create_app(config_name=None):
 
     # load config
     if config_name is None:
-        config_name = os.getenv("FLASK_ENV", "default")
+        config_name = getenv("FLASK_ENV", "default")
         app.config.from_object(config[config_name])
     else:
         app.config.from_object(config[config_name])
@@ -50,6 +54,11 @@ def create_app(config_name=None):
     setup_logging(app)
 
     logging.info("Starting Dummy Service")
+
+    # tracing config
+    if JAEGER_HOST is not None:
+        jaeger_tracer = setup_jaeger()
+        tracing = FlaskTracing(jaeger_tracer, True, app)
 
     # blueprints config
     register_blueprints(app)
@@ -123,6 +132,25 @@ def setup_logging(app):
             },
         }
     )
+
+
+def setup_jaeger():
+    logging.info("Setup tracing")
+    config = Config(
+        config={  # usually read from some yaml config
+            "sampler": {
+                "type": "const",
+                "param": 1,
+            },
+            "local_agent": {
+                "reporting_host": JAEGER_HOST,
+            },
+            "logging": True,
+        },
+        service_name=__app_name__,
+        validate=True,
+    )
+    return config.initialize_tracer()
 
 
 def register_blueprints(app):
