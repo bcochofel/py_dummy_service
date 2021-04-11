@@ -45,3 +45,7 @@ make build
 make run
 make kill
 ```
+
+## Open Tracing
+
+To send traces to Jaeger set the `JAEGER_HOST` environment variable.
