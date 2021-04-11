@@ -5,6 +5,9 @@
 
 <a name="0.6.0"></a>
 ## [0.6.0] - 2021-04-11
+### Chore
+- starting message
+
 ### Feat
 - some logging messages
 - logging
