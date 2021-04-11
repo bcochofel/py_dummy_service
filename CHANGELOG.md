@@ -3,10 +3,19 @@
 ## [Unreleased]
 
 
+<a name="0.4.0"></a>
+## [0.4.0] - 2021-04-11
+### Feat
+- liveness and readiness probes
+
+
 <a name="0.3.0"></a>
 ## [0.3.0] - 2021-04-11
 ### Feat
 - docker build and push
+
+### Pull Requests
+- Merge pull request [#3](https://github.com/bcochofel/terraplanfeed/issues/3) from bcochofel/build_docker
 
 
 <a name="0.2.4"></a>
@@ -42,7 +51,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.3.0...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.4.0...HEAD
+[0.4.0]: https://github.com/bcochofel/terraplanfeed/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/bcochofel/terraplanfeed/compare/0.2.4...0.3.0
 [0.2.4]: https://github.com/bcochofel/terraplanfeed/compare/0.2.3...0.2.4
 [0.2.3]: https://github.com/bcochofel/terraplanfeed/compare/0.2.2...0.2.3

@@ -13,6 +13,12 @@ class Config:
 
     # insert here common config
 
+    # flask healthz config
+    HEALTHZ = {
+        "live": "py_dummy_service.healthz.liveness",
+        "ready": "py_dummy_service.healthz.readiness",
+    }
+
 
 class DevelopmentConfig(Config):
     DEBUG = True

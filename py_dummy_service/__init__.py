@@ -6,6 +6,7 @@ import os
 # third party imports
 from flask import Flask, jsonify
 from prometheus_flask_exporter import PrometheusMetrics
+from flask_healthz import healthz
 
 
 # local imports
@@ -13,7 +14,7 @@ from config import config
 
 
 __app_name__ = "py-dummy-service"
-__app_version__ = "0.3.0"
+__app_version__ = "0.4.0"
 
 metrics = PrometheusMetrics.for_app_factory()
 metrics.info("app_info", "Dummy Service", version=__app_version__)
@@ -44,6 +45,7 @@ def create_app(conf_name=None):
 
     app.register_blueprint(main.bp)
     app.register_blueprint(errors.bp)
+    app.register_blueprint(healthz, url_prefix="/healthz")
     app.add_url_rule("/", endpoint="index")
 
     return app
