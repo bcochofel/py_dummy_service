@@ -8,6 +8,9 @@
 ### Chore
 - starting message
 
+### Docs
+- update
+
 ### Feat
 - logging current_app
 - some logging messages
