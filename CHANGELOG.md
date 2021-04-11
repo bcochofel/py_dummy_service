@@ -9,6 +9,9 @@
 - some logging messages
 - logging
 
+### Fix
+- log level
+
 
 <a name="0.5.0"></a>
 ## [0.5.0] - 2021-04-11
