@@ -1,14 +1,13 @@
 FROM python:3.8-slim-buster
 
-WORKDIR /app
-
-ENV FLASK_APP=py_dummy_service
-ENV FLASK_ENV=development
-
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
-EXPOSE 8080
-COPY . .
+ENV WORKERS=2
+ENV HOST="0.0.0.0"
+ENV PORT=8080
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=8080"]
+COPY . /app
+WORKDIR /app
+
+CMD [ "sh", "-c", "gunicorn -w ${WORKERS} \"py_dummy_service:create_app()\" -b \"${HOST}:${PORT}\""]
