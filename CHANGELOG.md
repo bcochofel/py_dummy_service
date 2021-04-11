@@ -6,6 +6,7 @@
 <a name="0.6.0"></a>
 ## [0.6.0] - 2021-04-11
 ### Feat
+- some logging messages
 - logging
 
 
