@@ -19,6 +19,10 @@ class Config:
         "ready": "py_dummy_service.healthz.readiness",
     }
 
+    @staticmethod
+    def init_app(app):
+        pass
+
 
 class DevelopmentConfig(Config):
     DEBUG = True
