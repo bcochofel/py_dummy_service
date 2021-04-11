@@ -13,7 +13,7 @@ from config import config
 
 
 __app_name__ = "py-dummy-service"
-__app_version__ = "0.2.0"
+__app_version__ = "0.2.2"
 
 metrics = PrometheusMetrics.for_app_factory()
 metrics.info("app_info", "Dummy Service", version=__app_version__)

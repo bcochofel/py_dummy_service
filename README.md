@@ -24,6 +24,13 @@ valid values for env:
 * testing
 * production (default)
 
+## Run tests and code coverage
+
+```bash
+make test
+make report
+```
+
 ## Run on Docker
 
 ```bash
