@@ -2,10 +2,32 @@
 
 Python Flask Dummy Service
 
-## Docker build
+## Install requirements
 
 ```bash
-docker build --tag py-dummy-service .
-docker tag py-dummy-service:latest py-dummy-service:0.2.0
-docker run --publish 8080:8080 py-dummy-service
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements
+```
+
+## Run locally
+
+```bash
+export FLASK_ENV=development
+export FLASK_APP=py_dummy_service
+flask run
+```
+
+valid values for env:
+
+* development
+* testing
+* production (default)
+
+## Run on Docker
+
+```bash
+make build
+make run
+make kill
 ```
