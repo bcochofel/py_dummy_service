@@ -65,6 +65,7 @@ def register_post_request_handlers(app):
 
 def setup_logging(app):
     debug = app.config["DEBUG"]
+    log_level = app.config["LOG_LEVEL"]
 
     dictConfig(
         {
@@ -80,7 +81,7 @@ def setup_logging(app):
             },
             "handlers": {
                 "console": {
-                    "level": "INFO",
+                    "level": log_level,
                     "class": "logging.StreamHandler",
                     "formatter": "default",
                     "stream": "ext://sys.stdout",
@@ -105,12 +106,12 @@ def setup_logging(app):
             "loggers": {
                 "gunicorn.error": {
                     "handlers": ["console"] if debug else ["console", "error_file"],
-                    "level": "INFO",
+                    "level": log_level,
                     "propagate": False,
                 },
                 "gunicorn.access": {
                     "handlers": ["console"] if debug else ["console", "access_file"],
-                    "level": "INFO",
+                    "level": log_level,
                     "propagate": False,
                 },
             },
