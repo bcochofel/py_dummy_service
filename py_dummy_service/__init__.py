@@ -2,6 +2,8 @@
 
 # base imports
 import os
+import logging
+from logging.config import dictConfig
 
 # third party imports
 from flask import Flask, jsonify
@@ -14,13 +16,13 @@ from config import config
 
 
 __app_name__ = "py-dummy-service"
-__app_version__ = "0.5.0"
+__app_version__ = "0.6.0"
 
 metrics = PrometheusMetrics.for_app_factory()
 metrics.info("app_info", "Dummy Service", version=__app_version__)
 
 
-def create_app(conf_name=None):
+def create_app(config_name=None):
     """
     Create and Configure the app
 
@@ -30,16 +32,101 @@ def create_app(conf_name=None):
     app = Flask(__name__, instance_relative_config=True)
 
     # load config
-    if conf_name is None:
+    if config_name is None:
         config_name = os.getenv("FLASK_ENV", "default")
         app.config.from_object(config[config_name])
     else:
-        app.config.from_object(config[conf_name])
+        app.config.from_object(config[config_name])
+    config[config_name].init_app(app)
 
-    # prometheus exporter
+    # prometheus exporter config
     metrics.init_app(app)
 
-    # import blueprints
+    # pre and post handlers
+    register_pre_request_handlers(app)
+    register_post_request_handlers(app)
+
+    # logging config
+    setup_logging(app)
+
+    logging.info("Starting Dummy Service")
+
+    # blueprints config
+    register_blueprints(app)
+
+    return app
+
+
+def register_pre_request_handlers(app):
+    pass
+
+
+def register_post_request_handlers(app):
+    pass
+
+
+def setup_logging(app):
+    debug = app.config["DEBUG"]
+    log_level = app.config["LOG_LEVEL"]
+
+    dictConfig(
+        {
+            "version": 1,
+            "disable_existing_loggers": True,
+            "formatters": {
+                "default": {
+                    "format": "[%(asctime)s] %(levelname)s in %(module)s: %(message)s",
+                },
+                "access": {
+                    "format": "%(message)s",
+                },
+            },
+            "handlers": {
+                "console": {
+                    "level": log_level,
+                    "class": "logging.StreamHandler",
+                    "formatter": "default",
+                    "stream": "ext://sys.stdout",
+                },
+                "error_file": {
+                    "class": "logging.handlers.RotatingFileHandler",
+                    "formatter": "default",
+                    "filename": "/var/log/gunicorn.error.log",
+                    "maxBytes": 10000,
+                    "backupCount": 10,
+                    "delay": "True",
+                },
+                "access_file": {
+                    "class": "logging.handlers.RotatingFileHandler",
+                    "formatter": "access",
+                    "filename": "/var/log/gunicorn.access.log",
+                    "maxBytes": 10000,
+                    "backupCount": 10,
+                    "delay": "True",
+                },
+            },
+            "loggers": {
+                "gunicorn.error": {
+                    "handlers": ["console"] if debug else ["console", "error_file"],
+                    "level": log_level,
+                    "propagate": False,
+                },
+                "gunicorn.access": {
+                    "handlers": ["console"] if debug else ["console", "access_file"],
+                    "level": log_level,
+                    "propagate": False,
+                },
+            },
+            "root": {
+                "level": "DEBUG" if debug else "INFO",
+                "handlers": ["console"] if debug else ["console"],
+            },
+        }
+    )
+
+
+def register_blueprints(app):
+    """Blueprints register."""
     from py_dummy_service import main
     from py_dummy_service import errors
 
@@ -47,5 +134,3 @@ def create_app(conf_name=None):
     app.register_blueprint(errors.bp)
     app.register_blueprint(healthz, url_prefix="/healthz")
     app.add_url_rule("/", endpoint="index")
-
-    return app

@@ -3,12 +3,32 @@
 ## [Unreleased]
 
 
+<a name="0.6.0"></a>
+## [0.6.0] - 2021-04-11
+### Chore
+- starting message
+
+### Docs
+- update
+
+### Feat
+- logging current_app
+- some logging messages
+- logging
+
+### Fix
+- log level
+
+
 <a name="0.5.0"></a>
 ## [0.5.0] - 2021-04-11
 ### Feat
 - docker debian slim
 - docker alpine
 - kubernetes manifests
+
+### Pull Requests
+- Merge pull request [#5](https://github.com/bcochofel/terraplanfeed/issues/5) from bcochofel/k8s
 
 
 <a name="0.4.0"></a>
@@ -62,7 +82,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.5.0...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.6.0...HEAD
+[0.6.0]: https://github.com/bcochofel/terraplanfeed/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/bcochofel/terraplanfeed/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/bcochofel/terraplanfeed/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/bcochofel/terraplanfeed/compare/0.2.4...0.3.0
