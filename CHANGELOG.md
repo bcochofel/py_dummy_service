@@ -9,6 +9,7 @@
 - starting message
 
 ### Feat
+- logging current_app
 - some logging messages
 - logging
 
