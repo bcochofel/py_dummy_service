@@ -3,6 +3,7 @@ import logging
 from flask import Blueprint, jsonify
 
 
+logger = logging.getLogger(__name__)
 bp = Blueprint("errors", __name__)
 
 

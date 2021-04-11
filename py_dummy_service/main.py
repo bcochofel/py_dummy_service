@@ -4,6 +4,7 @@ from flask import Blueprint, jsonify, request
 from py_dummy_service import __app_name__, __app_version__
 
 
+logger = logging.getLogger(__name__)
 bp = Blueprint("main", __name__)
 
 
