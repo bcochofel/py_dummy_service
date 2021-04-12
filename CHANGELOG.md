@@ -5,6 +5,9 @@
 
 <a name="0.9.0"></a>
 ## [0.9.0] - 2021-04-12
+### Chore
+- codecov workflow
+
 ### Feat
 - add hostname [#9](https://github.com/bcochofel/terraplanfeed/issues/9)
 
