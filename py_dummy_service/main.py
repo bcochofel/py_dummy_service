@@ -1,4 +1,5 @@
 import logging
+import subprocess
 
 from flask import Blueprint, jsonify, request
 from py_dummy_service import __app_name__, __app_version__
@@ -15,7 +16,11 @@ def index():
     logging.info("info log")
     logging.warning("warning log")
     logging.error("error log")
-    return jsonify(app_name=__app_name__, app_version=__app_version__)
+    return jsonify(
+        app_name=__app_name__,
+        app_version=__app_version__,
+        hostname=subprocess.check_output("hostname").decode("utf8").strip(),
+    )
 
 
 @bp.route("/headers")
