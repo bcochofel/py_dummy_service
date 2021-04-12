@@ -3,6 +3,15 @@
 ## [Unreleased]
 
 
+<a name="0.8.0"></a>
+## [0.8.0] - 2021-04-12
+### Docs
+- update
+
+### Feat
+- codecov
+
+
 <a name="0.7.0"></a>
 ## [0.7.0] - 2021-04-11
 ### Docs
@@ -10,6 +19,9 @@
 
 ### Feat
 - open tracing
+
+### Pull Requests
+- Merge pull request [#7](https://github.com/bcochofel/terraplanfeed/issues/7) from bcochofel:tracing
 
 
 <a name="0.6.0"></a>
@@ -94,7 +106,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.7.0...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.8.0...HEAD
+[0.8.0]: https://github.com/bcochofel/terraplanfeed/compare/0.7.0...0.8.0
 [0.7.0]: https://github.com/bcochofel/terraplanfeed/compare/0.6.0...0.7.0
 [0.6.0]: https://github.com/bcochofel/terraplanfeed/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/bcochofel/terraplanfeed/compare/0.4.0...0.5.0
