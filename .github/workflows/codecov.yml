@@ -18,6 +18,7 @@ jobs:
           python-version: 3.8
       - name: Generate Report
         run: |
+          pip install flask gunicorn flask-healthz prometheus-flask-exporter Flask-OpenTracing jaeger-client
           pip install pytest coverage
           coverage run -m pytest
       - name: Upload Coverage to Codecov
