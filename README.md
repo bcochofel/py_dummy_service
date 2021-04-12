@@ -13,6 +13,12 @@ source .venv/bin/activate
 pip install -r requirements
 ```
 
+additional requirements for running tests
+
+```bash
+pip install black pytest coverage gunicorn
+```
+
 ## Run locally
 
 ```bash
