@@ -3,6 +3,39 @@
 ## [Unreleased]
 
 
+<a name="0.9.0"></a>
+## [0.9.0] - 2021-04-12
+### Chore
+- codecov workflow
+
+### Feat
+- add hostname [#9](https://github.com/bcochofel/terraplanfeed/issues/9)
+
+
+<a name="0.8.4"></a>
+## [0.8.4] - 2021-04-12
+### Chore
+- fix codecov workflow
+
+
+<a name="0.8.3"></a>
+## [0.8.3] - 2021-04-12
+### Chore
+- fix codecov workflow
+
+
+<a name="0.8.2"></a>
+## [0.8.2] - 2021-04-12
+### Chore
+- fix codecov workflow
+
+
+<a name="0.8.1"></a>
+## [0.8.1] - 2021-04-12
+### Chore
+- fix codecov workflow
+
+
 <a name="0.8.0"></a>
 ## [0.8.0] - 2021-04-12
 ### Docs
@@ -10,6 +43,9 @@
 
 ### Feat
 - codecov
+
+### Pull Requests
+- Merge pull request [#8](https://github.com/bcochofel/terraplanfeed/issues/8) from bcochofel:codecov
 
 
 <a name="0.7.0"></a>
@@ -106,7 +142,12 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.8.0...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.9.0...HEAD
+[0.9.0]: https://github.com/bcochofel/terraplanfeed/compare/0.8.4...0.9.0
+[0.8.4]: https://github.com/bcochofel/terraplanfeed/compare/0.8.3...0.8.4
+[0.8.3]: https://github.com/bcochofel/terraplanfeed/compare/0.8.2...0.8.3
+[0.8.2]: https://github.com/bcochofel/terraplanfeed/compare/0.8.1...0.8.2
+[0.8.1]: https://github.com/bcochofel/terraplanfeed/compare/0.8.0...0.8.1
 [0.8.0]: https://github.com/bcochofel/terraplanfeed/compare/0.7.0...0.8.0
 [0.7.0]: https://github.com/bcochofel/terraplanfeed/compare/0.6.0...0.7.0
 [0.6.0]: https://github.com/bcochofel/terraplanfeed/compare/0.5.0...0.6.0
