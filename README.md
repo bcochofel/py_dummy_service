@@ -1,8 +1,8 @@
 # py_dummy_service
 
 [![codecov](https://codecov.io/gh/bcochofel/py_dummy_service/branch/main/graph/badge.svg)](https://codecov.io/gh/bcochofel/py_dummy_service)
-[!docker pulls](https://img.shields.io/docker/pulls/bcochofel/py-dummy-service)
-[!docker image size](https://img.shields.io/docker/image-size/bcochofel/py-dummy-service)
+[!docker pulls](https://img.shields.io/docker/pulls/bcochofel/py-dummy-service)(https://img.shields.io/docker/pulls/bcochofel/py-dummy-service)
+[!docker image size](https://img.shields.io/docker/image-size/bcochofel/py-dummy-service)(https://img.shields.io/docker/image-size/bcochofel/py-dummy-service)
 [![pre-commit badge][pre-commit-badge]][pre-commit] [![Conventional commits badge][conventional-commits-badge]][conventional-commits] [![Keep a Changelog v1.1.0 badge][keep-a-changelog-badge]][keep-a-changelog] [![MIT License Badge][license-badge]][license]
 
 Python Flask Dummy Service
