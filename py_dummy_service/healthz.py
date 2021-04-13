@@ -1,3 +1,4 @@
+# healthZ blueprint
 import logging
 
 from flask import current_app
@@ -8,7 +9,6 @@ logger = logging.getLogger(__name__)
 
 def check_readiness():
     logging.debug("Check readiness")
-    logging.debug("DEBUG=%s", current_app.config["DEBUG"])
     return True
 
 

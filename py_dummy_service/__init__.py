@@ -18,7 +18,7 @@ from config import config
 
 
 __app_name__ = "py-dummy-service"
-__app_version__ = "0.9.0"
+__app_version__ = "0.10.0"
 
 JAEGER_HOST = getenv("JAEGER_HOST", None)
 
@@ -31,7 +31,7 @@ def create_app(config_name=None):
     Create and Configure the app
 
     Args:
-        conf_name (str): configuration environment
+        config_name (str): configuration environment
     """
     app = Flask(__name__, instance_relative_config=True)
 
@@ -54,6 +54,10 @@ def create_app(config_name=None):
     setup_logging(app)
 
     logging.info("Starting Dummy Service")
+    logging.debug("debug log message")
+    logging.info("info log message")
+    logging.warning("warning log message")
+    logging.error("error log message")
 
     # tracing config
     if JAEGER_HOST is not None:
@@ -84,7 +88,7 @@ def setup_logging(app):
             "disable_existing_loggers": True,
             "formatters": {
                 "default": {
-                    "format": "[%(asctime)s] %(levelname)s in %(module)s: %(message)s",
+                    "format": "[%(asctime)s] [%(levelname)s] in %(module)s: %(message)s",
                 },
                 "access": {
                     "format": "%(message)s",
@@ -156,9 +160,11 @@ def setup_jaeger():
 def register_blueprints(app):
     """Blueprints register."""
     from py_dummy_service import main
+    from py_dummy_service import api
     from py_dummy_service import errors
 
     app.register_blueprint(main.bp)
+    app.register_blueprint(api.bp, url_prefix="/api/v1")
     app.register_blueprint(errors.bp)
     app.register_blueprint(healthz, url_prefix="/healthz")
     app.add_url_rule("/", endpoint="index")
