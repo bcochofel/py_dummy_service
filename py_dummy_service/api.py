@@ -19,7 +19,7 @@ def headers():
 
 
 @bp.route("/status/<status>", methods=["GET"])
-def status_code(status):
+def status_code(status=200):
     """Simulate Status Codes"""
     logging.info("status: %s", status)
     return jsonify({"status": status}), status
