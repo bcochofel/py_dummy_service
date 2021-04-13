@@ -6,6 +6,7 @@
 <a name="0.10.0"></a>
 ## [0.10.0] - 2021-04-13
 ### Feat
+- API blueprint headersand status
 - API blueprint
 
 
