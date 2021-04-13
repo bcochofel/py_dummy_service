@@ -42,6 +42,11 @@ flask routes
 
 You can use the ```/api/v1/<path>``` to simulate CRUD API endpoints.
 
+You also have two endpoints that can help with simulations:
+
+* /api/v1/headers (returns request headers)
+* /api/v1/status/\<status\> (returns \<status\>)
+
 ### POST Form Data
 
 ```bash

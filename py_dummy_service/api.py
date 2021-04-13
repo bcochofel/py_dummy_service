@@ -14,26 +14,39 @@ methods = ["GET", "POST", "PATCH", "DELETE"]
 @bp.route("/headers")
 def headers():
     """Show request Headers."""
-    logging.debug("headers")
-    headers = str(request.headers).split("\r\n")
-    stripped_headers = [string for string in headers if string != ""]
-    return jsonify(stripped_headers)
+    logging.info("headers: %s", request.headers)
+    return jsonify(dict(request.headers))
+
+
+@bp.route("/status/<status>", methods=["GET"])
+def status_code(status):
+    """Simulate Status Codes"""
+    logging.info("status: %s", status)
+    return jsonify({"status": status}), status
 
 
 @bp.route("/<path:path>", methods=methods)
 def generic(path):
     logging.info("endpoint: %s", path)
+    logging.info("method: %s", request.method)
     logging.info("headers: %s", request.headers)
-    logging.info("body: %s", request.get_data())
+    logging.info("cookies: %s", request.cookies)
     logging.info("data: %s", request.data.decode())
     logging.info("json: %s", request.get_json())
+    logging.info("args: %s", request.args)
     logging.info("form: %s", request.form)
+    logging.info("remote_addr: %s", request.remote_addr)
 
     return jsonify(
         {
             "endpoint": path,
+            "method": request.method,
+            "headers": dict(request.headers),
+            "cookies": request.cookies,
             "data": request.data.decode("utf-8"),
-            "form": request.form,
             "json": request.get_json(),
+            "args": request.args,
+            "form": request.form,
+            "remote_addr": request.remote_addr,
         }
     )
