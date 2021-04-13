@@ -3,6 +3,12 @@
 ## [Unreleased]
 
 
+<a name="0.10.0"></a>
+## [0.10.0] - 2021-04-13
+### Feat
+- API blueprint
+
+
 <a name="0.9.0"></a>
 ## [0.9.0] - 2021-04-12
 ### Chore
@@ -10,6 +16,9 @@
 
 ### Feat
 - add hostname [#9](https://github.com/bcochofel/terraplanfeed/issues/9)
+
+### Pull Requests
+- Merge pull request [#11](https://github.com/bcochofel/terraplanfeed/issues/11) from bcochofel:hostname
 
 
 <a name="0.8.4"></a>
@@ -142,7 +151,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.9.0...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.10.0...HEAD
+[0.10.0]: https://github.com/bcochofel/terraplanfeed/compare/0.9.0...0.10.0
 [0.9.0]: https://github.com/bcochofel/terraplanfeed/compare/0.8.4...0.9.0
 [0.8.4]: https://github.com/bcochofel/terraplanfeed/compare/0.8.3...0.8.4
 [0.8.3]: https://github.com/bcochofel/terraplanfeed/compare/0.8.2...0.8.3
