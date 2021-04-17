@@ -34,9 +34,9 @@ jobs:
       - name: Bump version
         run: |
           sed -i "s/\(__app_version__ = \"\).*\(\"\)/\1$VER\2/g" py_dummy_service/__init__.py
-          sed -i "s/\(appVersion: \).*$/\1$VER/g" charts/Chart.yaml
-          sed -i "s/\(version: \).*$/\1$VER/g" charts/Chart.yaml
-          sed -i "s/\(tag: \"\).*\(\"\)/\1$VER\2/g" charts/values.yaml
+          sed -i "s/\(appVersion: \).*$/\1$VER/g" charts/py-dummy-service/Chart.yaml
+          sed -i "s/\(version: \).*$/\1$VER/g" charts/py-dummy-service/Chart.yaml
+          sed -i "s/\(tag: \"\).*\(\"\)/\1$VER\2/g" charts/py-dummy-service/values.yaml
         env:
           VER: ${{ steps.gitversion.outputs.majorMinorPatch }}
       - name: Commit Changes

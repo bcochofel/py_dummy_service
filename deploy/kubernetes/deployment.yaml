@@ -20,7 +20,7 @@ spec:
         runAsGroup: 5000
       containers:
       - name: py-dummy-service
-        image: bcochofel/py-dummy-service:0.10.0
+        image: bcochofel/py-dummy-service:1.1.1
         imagePullPolicy: IfNotPresent
         securityContext:
           allowPrivilegeEscalation: false
