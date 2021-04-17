@@ -12,6 +12,7 @@ Python Flask Dummy Service
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
+pip install -U pip
 pip install -r requirements
 ```
 
@@ -48,6 +49,18 @@ You also have two endpoints that can help with simulations:
 
 * /api/v1/headers (returns request headers)
 * /api/v1/status/\<status\> (returns \<status\>)
+
+You can also use ```/be``` to simulate communication to a backend.
+The backend url can be set using:
+
+```bash
+export BACKEND_URL="http://localhost:5000"
+```
+
+you can then use:
+
+* /be/status/\<status\>
+* /be/\<path\>
 
 ### POST Form Data
 
