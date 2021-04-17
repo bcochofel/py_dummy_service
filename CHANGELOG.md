@@ -3,6 +3,21 @@
 ## [Unreleased]
 
 
+<a name="0.11.0"></a>
+## [0.11.0] - 2021-04-17
+### Feat
+- helm chart
+
+
+<a name="0.10.3"></a>
+## [0.10.3] - 2021-04-13
+
+<a name="0.10.2"></a>
+## [0.10.2] - 2021-04-13
+
+<a name="0.10.1"></a>
+## [0.10.1] - 2021-04-13
+
 <a name="0.10.0"></a>
 ## [0.10.0] - 2021-04-13
 ### Feat
@@ -10,6 +25,9 @@
 - kubernetes deployment bump
 - API blueprint headersand status
 - API blueprint
+
+### Pull Requests
+- Merge pull request [#12](https://github.com/bcochofel/terraplanfeed/issues/12) from bcochofel/apibp
 
 
 <a name="0.9.0"></a>
@@ -154,7 +172,11 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.10.0...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/0.11.0...HEAD
+[0.11.0]: https://github.com/bcochofel/terraplanfeed/compare/0.10.3...0.11.0
+[0.10.3]: https://github.com/bcochofel/terraplanfeed/compare/0.10.2...0.10.3
+[0.10.2]: https://github.com/bcochofel/terraplanfeed/compare/0.10.1...0.10.2
+[0.10.1]: https://github.com/bcochofel/terraplanfeed/compare/0.10.0...0.10.1
 [0.10.0]: https://github.com/bcochofel/terraplanfeed/compare/0.9.0...0.10.0
 [0.9.0]: https://github.com/bcochofel/terraplanfeed/compare/0.8.4...0.9.0
 [0.8.4]: https://github.com/bcochofel/terraplanfeed/compare/0.8.3...0.8.4

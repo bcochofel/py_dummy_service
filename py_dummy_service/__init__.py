@@ -18,7 +18,7 @@ from config import config
 
 
 __app_name__ = "py-dummy-service"
-__app_version__ = "0.10.0"
+__app_version__ = "0.11.0"
 
 JAEGER_HOST = getenv("JAEGER_HOST", None)
 
