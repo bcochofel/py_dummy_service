@@ -1,9 +1,9 @@
 # configuration file
 
-import os
+from os import path, getenv
 
 
-basedir = os.path.abspath(os.path.dirname(__file__))
+basedir = path.abspath(path.dirname(__file__))
 
 
 class Config:
@@ -18,6 +18,12 @@ class Config:
         "live": "py_dummy_service.healthz.liveness",
         "ready": "py_dummy_service.healthz.readiness",
     }
+
+    # backend url
+    BACKEND_URL = getenv("BACKEND_URL", "http://localhost:8080")
+
+    # jaeger host
+    JAEGER_HOST = getenv("JAEGER_HOST", None)
 
     @staticmethod
     def init_app(app):

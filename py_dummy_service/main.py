@@ -11,6 +11,8 @@ bp = Blueprint("main", __name__)
 
 
 @bp.route("/")
+@bp.route("/index")
+@bp.route("/info")
 def index():
     """Index route."""
     hostname = subprocess.check_output("hostname").decode("utf8").strip()

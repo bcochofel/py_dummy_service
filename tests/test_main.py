@@ -3,11 +3,11 @@ def test_index(client):
     assert response.status_code == 200
 
 
-def test_metrics(client):
-    response = client.get("/metrics")
+def test_info(client):
+    response = client.get("/info")
     assert response.status_code == 200
 
 
-def test_headers(client):
-    response = client.get("/headers")
+def test_metrics(client):
+    response = client.get("/metrics")
     assert response.status_code == 200
