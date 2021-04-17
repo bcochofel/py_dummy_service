@@ -20,7 +20,7 @@ class Config:
     }
 
     # backend url
-    BACKEND_URL = getenv("BACKEND_URL", "http://localhost:8080")
+    BACKEND_URL = getenv("BACKEND_URL", "http://localhost:5000")
 
     @staticmethod
     def init_app(app):

@@ -9,8 +9,6 @@ from os import getenv
 from flask import Flask, jsonify
 from prometheus_flask_exporter import PrometheusMetrics
 from flask_healthz import healthz
-from jaeger_client import Config
-from flask_opentracing import FlaskTracing
 
 
 # local imports
@@ -135,10 +133,12 @@ def register_blueprints(app):
     """Blueprints register."""
     from py_dummy_service import main
     from py_dummy_service import api
+    from py_dummy_service import backend
     from py_dummy_service import errors
 
     app.register_blueprint(main.bp)
     app.register_blueprint(api.bp, url_prefix="/api/v1")
+    app.register_blueprint(backend.bp, url_prefix="/be")
     app.register_blueprint(errors.bp)
     app.register_blueprint(healthz, url_prefix="/healthz")
     app.add_url_rule("/", endpoint="index")
