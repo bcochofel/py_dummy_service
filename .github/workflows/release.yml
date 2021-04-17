@@ -3,6 +3,12 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'config.py'
+      - 'setup.*'
+      - 'Dockerfile'
+      - 'py_dummy_service/*'
+      - 'charts/*'
 
 jobs:
   release:
@@ -20,6 +26,21 @@ jobs:
       - name: Use GitVersion
         uses: gittools/actions/gitversion/execute@v0.9.8
         id: gitversion
+      - name: Changelog
+        id: changelog
+        uses: nuuday/github-changelog-action@v1.0.0
+        with:
+          next_version: "${{ steps.gitversion.outputs.majorMinorPatch }}"
+      - name: Bump version
+        run: |
+          sed -i "s/\(__app_version__ = \"\).*\(\"\)/\1$VER\2/g" py_dummy_service/__init__.py
+          sed -i "s/\(appVersion: \"\).*\(\"\)/\1$VER\2/g" charts/Chart.yaml
+          sed -i "s/\(version: \"\).*\(\"\)/\1$VER\2/g" charts/Chart.yaml
+          sed -i "s/\(tag: \"\).*\(\"\)/\1$VER\2/g" charts/values.yaml
+        env:
+          VER: ${{ steps.gitversion.outputs.majorMinorPatch }}
+      - name: Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
       - name: Create Release
         id: create_release
         uses: actions/create-release@latest
@@ -45,3 +66,7 @@ jobs:
         with:
           push: true
           tags: bcochofel/py-dummy-service:${{ steps.gitversion.outputs.majorMinorPatch }}
+      - name: Publish Helm charts
+        uses: stefanprodan/helm-gh-pages@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
