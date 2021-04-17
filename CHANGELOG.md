@@ -3,6 +3,20 @@
 ## [Unreleased]
 
 
+<a name="1.2.0"></a>
+## [1.2.0] - 2021-04-17
+### Feat
+- added backend simulation
+
+### Fix
+- bacjend tests commented out
+- requirements.txt
+- python requirements for gh actions
+
+### Pull Requests
+- Merge pull request [#15](https://github.com/bcochofel/terraplanfeed/issues/15) from bcochofel/backend
+
+
 <a name="1.1.2"></a>
 ## [1.1.2] - 2021-04-17
 ### Docs
@@ -202,7 +216,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.1.2...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/bcochofel/terraplanfeed/compare/1.1.2...1.2.0
 [1.1.2]: https://github.com/bcochofel/terraplanfeed/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/bcochofel/terraplanfeed/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/bcochofel/terraplanfeed/compare/0.11.0...1.1.0
