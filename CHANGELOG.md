@@ -3,6 +3,20 @@
 ## [Unreleased]
 
 
+<a name="1.2.1"></a>
+## [1.2.1] - 2021-04-17
+### Chore
+- helm chart lint gh-actions
+
+### Fix
+- helm chart
+- chart installation
+
+### Pull Requests
+- Merge pull request [#17](https://github.com/bcochofel/terraplanfeed/issues/17) from bcochofel/fix_triggers
+- Merge pull request [#16](https://github.com/bcochofel/terraplanfeed/issues/16) from bcochofel/chart
+
+
 <a name="1.2.0"></a>
 ## [1.2.0] - 2021-04-17
 ### Feat
@@ -216,7 +230,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.2.0...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.2.1...HEAD
+[1.2.1]: https://github.com/bcochofel/terraplanfeed/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/bcochofel/terraplanfeed/compare/1.1.2...1.2.0
 [1.1.2]: https://github.com/bcochofel/terraplanfeed/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/bcochofel/terraplanfeed/compare/1.1.0...1.1.1
