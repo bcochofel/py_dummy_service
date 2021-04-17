@@ -22,9 +22,6 @@ class Config:
     # backend url
     BACKEND_URL = getenv("BACKEND_URL", "http://localhost:8080")
 
-    # jaeger host
-    JAEGER_HOST = getenv("JAEGER_HOST", None)
-
     @staticmethod
     def init_app(app):
         pass
