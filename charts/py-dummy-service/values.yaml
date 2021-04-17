@@ -21,7 +21,8 @@ podSecurityContext:
   runAsGroup: 5000
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  allowPrivilegeEscalation: false
   # capabilities:
   #   drop:
   #   - ALL
