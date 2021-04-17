@@ -19,7 +19,6 @@ podAnnotations: {}
 podSecurityContext:
   runAsUser: 5000
   runAsGroup: 5000
-  allowPrivilegeEscalation: false
   # fsGroup: 2000
 
 securityContext: {}
