@@ -1,0 +1,17 @@
+name: Helm Chart
+on: [pull_request]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      OS: ubuntu-latest
+      PYTHON: '3.9'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Validate Helm chart
+        uses: stefanprodan/kube-tools@v1
+        with:
+          command: |
+            helmv3 template ./charts/py-dummy-service | kubeval --strict
