@@ -20,8 +20,6 @@ from config import config
 __app_name__ = "py-dummy-service"
 __app_version__ = "0.11.0"
 
-JAEGER_HOST = getenv("JAEGER_HOST", None)
-
 metrics = PrometheusMetrics.for_app_factory()
 metrics.info("app_info", "Dummy Service", version=__app_version__)
 
@@ -54,15 +52,10 @@ def create_app(config_name=None):
     setup_logging(app)
 
     logging.info("Starting Dummy Service")
-    logging.debug("debug log message")
-    logging.info("info log message")
-    logging.warning("warning log message")
-    logging.error("error log message")
-
-    # tracing config
-    if JAEGER_HOST is not None:
-        jaeger_tracer = setup_jaeger()
-        tracing = FlaskTracing(jaeger_tracer, True, app)
+    # logging.debug("debug log message")
+    # logging.info("info log message")
+    # logging.warning("warning log message")
+    # logging.error("error log message")
 
     # blueprints config
     register_blueprints(app)
@@ -136,25 +129,6 @@ def setup_logging(app):
             },
         }
     )
-
-
-def setup_jaeger():
-    logging.info("Setup tracing")
-    config = Config(
-        config={  # usually read from some yaml config
-            "sampler": {
-                "type": "const",
-                "param": 1,
-            },
-            "local_agent": {
-                "reporting_host": JAEGER_HOST,
-            },
-            "logging": True,
-        },
-        service_name=__app_name__,
-        validate=True,
-    )
-    return config.initialize_tracer()
 
 
 def register_blueprints(app):
