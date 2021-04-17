@@ -3,6 +3,14 @@
 ## [Unreleased]
 
 
+<a name="1.1.2"></a>
+## [1.1.2] - 2021-04-17
+### Fix
+- dependencies
+- release paths
+- charts
+
+
 <a name="1.1.1"></a>
 ## [1.1.1] - 2021-04-17
 ### Fix
@@ -190,7 +198,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.1.1...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.1.2...HEAD
+[1.1.2]: https://github.com/bcochofel/terraplanfeed/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/bcochofel/terraplanfeed/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/bcochofel/terraplanfeed/compare/0.11.0...1.1.0
 [0.11.0]: https://github.com/bcochofel/terraplanfeed/compare/0.10.3...0.11.0
