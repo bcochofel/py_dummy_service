@@ -5,7 +5,11 @@
 
 <a name="1.1.2"></a>
 ## [1.1.2] - 2021-04-17
+### Docs
+- update chart docs
+
 ### Fix
+- jaeger host removed
 - dependencies
 - release paths
 - charts
