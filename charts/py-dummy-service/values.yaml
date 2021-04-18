@@ -14,7 +14,13 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-backend: #http://localhost
+# gunicorn configuration for py-dummy-service
+server:
+  httpHost: "0.0.0.0"
+  httpPort: 5000
+  workers: 2
+
+# backend: http://localhost
 
 podAnnotations: {}
 
@@ -60,7 +66,7 @@ resources: {}
 autoscaling:
   enabled: false
   minReplicas: 1
-  maxReplicas: 100
+  maxReplicas: 10
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 

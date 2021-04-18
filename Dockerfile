@@ -6,7 +6,7 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 ENV WORKERS=2
 ENV HOST="0.0.0.0"
-ENV PORT=8080
+ENV PORT=5000
 
 COPY . /app
 WORKDIR /app
