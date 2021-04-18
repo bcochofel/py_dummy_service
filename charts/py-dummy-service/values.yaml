@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: bcochofel/py-dummy-service
   pullPolicy: IfNotPresent
-  tag: "1.3.0"
+  tag: "1.4.0"
 
 
 imagePullSecrets: []

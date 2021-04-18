@@ -2,8 +2,8 @@ apiVersion: v2
 name: py-dummy-service
 description: A Helm chart for Kubernetes
 type: application
-version: 1.3.0
-appVersion: 1.3.0
+version: 1.4.0
+appVersion: 1.4.0
 maintainers:
 - email: bruno.cochofel@gmail.com
   name: bcochofel

@@ -3,6 +3,18 @@
 ## [Unreleased]
 
 
+<a name="1.4.0"></a>
+## [1.4.0] - 2021-04-18
+### Chore
+- bump versions
+
+### Feat
+- hostname and IP
+
+### Pull Requests
+- Merge pull request [#19](https://github.com/bcochofel/terraplanfeed/issues/19) from bcochofel/host_info
+
+
 <a name="1.3.0"></a>
 ## [1.3.0] - 2021-04-18
 ### Feat
@@ -239,7 +251,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.3.0...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.4.0...HEAD
+[1.4.0]: https://github.com/bcochofel/terraplanfeed/compare/1.3.0...1.4.0
 [1.3.0]: https://github.com/bcochofel/terraplanfeed/compare/1.2.1...1.3.0
 [1.2.1]: https://github.com/bcochofel/terraplanfeed/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/bcochofel/terraplanfeed/compare/1.1.2...1.2.0
