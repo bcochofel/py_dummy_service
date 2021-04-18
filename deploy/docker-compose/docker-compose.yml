@@ -5,13 +5,13 @@ services:
         image: bcochofel/py-dummy-service:1.4.0
         restart: always
         ports:
-            - "8080:8080"
+            - "8088:5000"
     frontend:
         image: bcochofel/py-dummy-service:1.4.0
         restart: always
         environment:
-            BACKEND_URL: http://backend:8080
+            BACKEND_URL: http://backend:8088
         ports:
-            - "5000:8080"
+            - "8080:5000"
         depends_on:
             - backend
