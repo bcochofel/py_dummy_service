@@ -35,15 +35,15 @@ spec:
           env:
           {{- if .Values.server.httpHost }}
           - name: HOST
-            value: {{ .Values.server.httpHost }}
+            value: {{ quote .Values.server.httpHost }}
           {{- end }}
           {{- if .Values.server.workers }}
           - name: WORKERS
-            value: {{ .Values.server.workers }}
+            value: {{ quote .Values.server.workers }}
           {{- end }}
           {{- if .Values.server.httpPort }}
           - name: PORT
-            value: {{ .Values.server.httpPort }}
+            value: {{ quote .Values.server.httpPort }}
           {{- end }}
           {{- if .Values.backend }}
           - name: BACKEND_URL
