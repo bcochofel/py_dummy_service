@@ -6,7 +6,7 @@ from logging.config import dictConfig
 from os import getenv
 
 # third party imports
-from flask import Flask, jsonify
+from flask import Flask
 from prometheus_flask_exporter import PrometheusMetrics
 from flask_healthz import healthz
 

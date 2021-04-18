@@ -33,13 +33,25 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+          {{- if .Values.server.httpHost }}
+          - name: HOST
+            value: {{ quote .Values.server.httpHost }}
+          {{- end }}
+          {{- if .Values.server.workers }}
+          - name: WORKERS
+            value: {{ quote .Values.server.workers }}
+          {{- end }}
+          {{- if .Values.server.httpPort }}
+          - name: PORT
+            value: {{ quote .Values.server.httpPort }}
+          {{- end }}
           {{- if .Values.backend }}
           - name: BACKEND_URL
             value: {{ .Values.backend }}
           {{- end }}
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: {{ .Values.port | default 5000 }}
               protocol: TCP
           livenessProbe:
             httpGet:
