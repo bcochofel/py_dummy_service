@@ -3,6 +3,21 @@
 ## [Unreleased]
 
 
+<a name="1.5.0"></a>
+## [1.5.0] - 2021-04-18
+### Feat
+- environment variables
+
+### Fix
+- helm chart kubeval
+- helm chart
+- docker compose ports
+- docker compose ports
+
+### Pull Requests
+- Merge pull request [#20](https://github.com/bcochofel/terraplanfeed/issues/20) from bcochofel/env_variables
+
+
 <a name="1.4.0"></a>
 ## [1.4.0] - 2021-04-18
 ### Chore
@@ -251,7 +266,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.4.0...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.5.0...HEAD
+[1.5.0]: https://github.com/bcochofel/terraplanfeed/compare/1.4.0...1.5.0
 [1.4.0]: https://github.com/bcochofel/terraplanfeed/compare/1.3.0...1.4.0
 [1.3.0]: https://github.com/bcochofel/terraplanfeed/compare/1.2.1...1.3.0
 [1.2.1]: https://github.com/bcochofel/terraplanfeed/compare/1.2.0...1.2.1
