@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+    backend:
+        image: bcochofel/py-dummy-service:1.2.1
+        restart: always
+        ports:
+            - "8080:8080"
+    frontend:
+        image: bcochofel/py-dummy-service:1.2.1
+        restart: always
+        environment:
+            BACKEND_URL: http://backend:8080
+        ports:
+            - "5000:8080"
+        depends_on:
+            - backend

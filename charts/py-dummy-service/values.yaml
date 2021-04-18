@@ -13,6 +13,8 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+backend: #http://localhost
+
 podAnnotations: {}
 
 podSecurityContext:
