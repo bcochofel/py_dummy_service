@@ -3,6 +3,15 @@
 ## [Unreleased]
 
 
+<a name="1.3.0"></a>
+## [1.3.0] - 2021-04-18
+### Feat
+- deploy backend
+
+### Pull Requests
+- Merge pull request [#18](https://github.com/bcochofel/terraplanfeed/issues/18) from bcochofel:deploy_backend
+
+
 <a name="1.2.1"></a>
 ## [1.2.1] - 2021-04-17
 ### Chore
@@ -230,7 +239,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-04-11
 
-[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.2.1...HEAD
+[Unreleased]: https://github.com/bcochofel/terraplanfeed/compare/1.3.0...HEAD
+[1.3.0]: https://github.com/bcochofel/terraplanfeed/compare/1.2.1...1.3.0
 [1.2.1]: https://github.com/bcochofel/terraplanfeed/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/bcochofel/terraplanfeed/compare/1.1.2...1.2.0
 [1.1.2]: https://github.com/bcochofel/terraplanfeed/compare/1.1.1...1.1.2
