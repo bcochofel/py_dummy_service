@@ -35,7 +35,7 @@ spec:
           env:
           {{- if .Values.server.httpHost }}
           - name: HOST
-            value: {{ quote .Values.server.httpHost }}
+            value: {{ .Values.server.httpHost }}
           {{- end }}
           {{- if .Values.server.workers }}
           - name: WORKERS

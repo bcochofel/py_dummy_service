@@ -16,7 +16,7 @@ fullnameOverride: ""
 
 # gunicorn configuration for py-dummy-service
 server:
-  httpHost: "0.0.0.0"
+  httpHost: 0.0.0.0
   httpPort: 5000
   workers: 2
 
