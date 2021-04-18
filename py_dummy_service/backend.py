@@ -1,11 +1,34 @@
 import logging
 import requests
+import socket
 
 from flask import Blueprint, current_app, jsonify
+from py_dummy_service import __app_name__, __app_version__
 
 
 logger = logging.getLogger(__name__)
 bp = Blueprint("backend", __name__)
+
+
+@bp.route("/info")
+def info():
+    """Info."""
+    try:
+        hostname = socket.gethostname()
+        ip = socket.gethostbyname(hostname)
+    except:
+        hostname = "unknown"
+        ip = "unknown"
+    logging.debug("Application name: %s", __app_name__)
+    logging.debug("Application version: %s", __app_version__)
+    logging.debug("Hostname: %s", hostname)
+    logging.debug("IP: %s", ip)
+    return jsonify(
+        app_name=__app_name__,
+        app_version=__app_version__,
+        hostname=hostname,
+        ip=ip,
+    )
 
 
 @bp.route("/status/<status>")
