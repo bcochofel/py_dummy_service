@@ -37,6 +37,7 @@ jobs:
           sed -i "s/\(appVersion: \).*$/\1$VER/g" charts/py-dummy-service/Chart.yaml
           sed -i "s/\(version: \).*$/\1$VER/g" charts/py-dummy-service/Chart.yaml
           sed -i "s/\(tag: \"\).*\(\"\)/\1$VER\2/g" charts/py-dummy-service/values.yaml
+          sed -i "s/\(bcochofel\/py-dummy-service:\).*$/\1$VER/g" deploy/docker-compose/docker-compose.yml
         env:
           VER: ${{ steps.gitversion.outputs.majorMinorPatch }}
       - name: Commit Changes
