@@ -2,6 +2,22 @@ apiVersion: v1
 entries:
   py-dummy-service:
   - apiVersion: v2
+    appVersion: 1.6.0
+    created: "2021-04-19T07:42:38.526836206Z"
+    description: A Helm chart for Kubernetes
+    digest: 95bd2ada30bf9b5c664da3b68a0e7a0b958c0f017068bccfc90600c7d9392f06
+    home: https://github.com/bcochofel/py_dummy_service
+    maintainers:
+    - email: bruno.cochofel@gmail.com
+      name: bcochofel
+    name: py-dummy-service
+    sources:
+    - https://github.com/bcochofel/py_dummy_service
+    type: application
+    urls:
+    - https://bcochofel.github.io/py_dummy_service/py-dummy-service-1.6.0.tgz
+    version: 1.6.0
+  - apiVersion: v2
     appVersion: 1.5.0
     created: "2021-04-18T18:23:17.619627825Z"
     description: A Helm chart for Kubernetes
@@ -97,4 +113,4 @@ entries:
     urls:
     - https://bcochofel.github.io/py_dummy_service/py-dummy-service-1.1.2.tgz
     version: 1.1.2
-generated: "2021-04-18T18:23:17.618744317Z"
+generated: "2021-04-19T07:42:38.5258681Z"
