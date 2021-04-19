@@ -3,11 +3,13 @@ import logging
 from textwrap import wrap
 
 from flask import Blueprint, jsonify, request
+from flask_restx import Api
 from py_dummy_service import __app_name__, __app_version__
 
 
 logger = logging.getLogger(__name__)
 bp = Blueprint("api", __name__)
+api = Api(bp)
 methods = ["GET", "POST", "PATCH", "DELETE"]
 
 
